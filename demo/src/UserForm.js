@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Formulario from './Formulario.js';
 
 export default class UserForm extends Component{
 constructor(props){
@@ -49,6 +51,14 @@ handleSubmit(event){
         this.setState({[e.target.name]: e.target.value});
 	}
 
+	//Redireccionar a la página de Busqueda
+	redirect(){
+		/*ReactDOM.render(
+     		<Redirect to='./Busqueda.js'/>
+     	);*/
+     	ReactDOM.render(<Formulario />, document.getElementById('root'));
+	}
+
 	//Los input tienen que tener vinculado el evento de cambio 
 	render(){
 		return (
@@ -61,6 +71,7 @@ handleSubmit(event){
 			  <input type="text" onChange={this.logChange.bind(this)} placeholder="Fecha de nacimiento AAAA-MM-DD" name="fechaNacimiento" />
 	          <input type="email" onChange={this.logChange.bind(this)} placeholder="Email" name="email" />
 	          <input type="submit" value="Guardar" />
+	          <input type="button" value="Buscar" onClick={this.redirect}/>
 	        </form>
 		);
 	}
