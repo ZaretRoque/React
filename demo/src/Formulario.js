@@ -15,7 +15,7 @@ export default class Formulario extends React.Component{
 		event.preventDefault();
 		var data = {}
 		var same = this;
-		fetch("http://localhost/CodeIgniter/index.php/react/Comentario_resource/conductor/telefono/" + this.state.telefono, {
+		fetch("http://localhost:8084/Transito/ws/servicios/conductorTelefono/" + this.state.telefono, {
             method: 'GET',
         }).then(function(response) {
             if (response.status >= 400) {
@@ -38,7 +38,7 @@ export default class Formulario extends React.Component{
 			nombre={data['nombre'] + ' ' + data['apellidos']} 
 			numeroLicencia={data['numeroLicencia']} 
 			fechaNacimiento={data['fechaNacimiento']} 
-			correo={data['correo']}/>, document.getElementById('elemento'));
+			correo={data['email']}/>, document.getElementById('elemento'));
 	}
 	logChange(e) {
         this.setState({[e.target.name]: e.target.value});

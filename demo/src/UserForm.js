@@ -62,6 +62,8 @@ handleSubmit(event){
 	//Los input tienen que tener vinculado el evento de cambio 
 	render(){
 		return (
+			<div>
+			<h1>Registrar conductor</h1>
 			<form onSubmit={this.handleSubmit} method="POST">
 			  <input type="text" onChange={this.logChange.bind(this)} placeholder="Nombre" name="nombre" />
 			  <input type="text" onChange={this.logChange.bind(this)} placeholder="Apellidos" name="apellidos" />
@@ -73,6 +75,7 @@ handleSubmit(event){
 	          <input type="submit" value="Guardar" />
 	          <input type="button" value="Buscar" onClick={this.redirect}/>
 	        </form>
+	        </div>
 		);
 	}
 

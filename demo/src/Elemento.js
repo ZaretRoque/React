@@ -7,7 +7,7 @@ export default class Elemento extends React.Component{
 			nombre: props.nombre,
 			numeroLicencia: props.numeroLicencia,
 			fechaNacimiento: props.fechaNacimiento,
-			correo: props.correo,
+			correo: props.correo
 		}
 	}
 
