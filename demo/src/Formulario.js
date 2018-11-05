@@ -1,5 +1,6 @@
 import React from 'react';
 import Elemento from './Elemento.js';
+import UserForm from './UserForm.js';
 import ReactDOM from 'react-dom';
 
 export default class Formulario extends React.Component{
@@ -43,6 +44,12 @@ export default class Formulario extends React.Component{
 	logChange(e) {
         this.setState({[e.target.name]: e.target.value});
 	}
+	redirect(){
+		/*ReactDOM.render(
+     		<Redirect to='./App.js'/>
+     	);*/
+     	ReactDOM.render(<UserForm />, document.getElementById('root'));
+	}
 
 	render(){
 		return (
@@ -51,6 +58,7 @@ export default class Formulario extends React.Component{
 				<form onSubmit={this.handleSubmit.bind(this)} method="GET">
 					<input type="text" name="telefono" placeholder="Teléfono" onChange={this.logChange.bind(this)}/>
 					<input type="submit" value="Buscar"/>
+					<input type="button" value="Registrar" onClick={this.redirect}/>
 				</form>
 				<div id="elemento"></div>
 			</div>
